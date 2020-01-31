@@ -40,5 +40,22 @@ public class socio {
 	 public void addLibro(String codigoLibro){
 	        prestamo.add(codigoLibro);
 	    }
-	    
+	 public boolean buscarLibro (String codigoLibro) {
+		 for (int i = 0; i < prestamo.size(); i++) {
+			String codigo =prestamo.get(i);
+			if (codigo==codigoLibro) {
+				return true;
+			}
+		}
+		return false;
+	 }
+	 public void quitarLibro (String codigoLibro) {
+		 for (int i = 0; i < prestamo.size(); i++) {
+			String codigo =prestamo.get(i);
+			if (codigo==codigoLibro) {
+				prestamo.remove(i);
+			}
+		}
+		
+	 }
 }

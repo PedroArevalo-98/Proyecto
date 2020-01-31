@@ -54,6 +54,30 @@ public class Prestamo {
     
     public void multa(){
     }
+    public boolean buscarPrestamo (String codigo) {
+		
+			if (codigoLibro==codigo) {
+				return true;
+			}
+		
+		return false;
+	 }
+
+	public String getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(String idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+
+	public ArrayList<String> getCodigosLibrosPrestados() {
+		return codigosLibrosPrestados;
+	}
+
+	public void setCodigosLibrosPrestados(ArrayList<String> codigosLibrosPrestados) {
+		this.codigosLibrosPrestados = codigosLibrosPrestados;
+	}
     
 }
 

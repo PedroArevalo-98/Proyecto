@@ -12,7 +12,7 @@ public class biblioteca {
 	static Scanner En;
 	static ArrayList<libros> ListaLibros;
 	static ArrayList<socio> ListaSocios;
-	static ArrayList<Prestamo> Prestamos;
+	static ArrayList<Prestamo> ListaPrestamos;
 	
 	
 	public static void main(String[] args) {
@@ -40,6 +40,7 @@ public class biblioteca {
 							LocalDateTime fecha = LocalDateTime.now();
 							 Prestamo prestamo = new Prestamo(S.getCarnet(),L.getId(),fecha);
 							 S.addLibro(L.getId());
+							 
 						}
 					}
 				}else if (L.isDisponible()==false) {
@@ -56,5 +57,39 @@ public class biblioteca {
 	}
 }
 }
-	
+	public static void devolverLibro(String carnetSocio, String Titulo) {
+		
+		 for(int i=0; i<ListaLibros.size(); i++){
+	            libros L=ListaLibros.get(i);
+	            if(L.getTitulo() == Titulo){
+	            	String codigoLibro=L.getId();
+	            	if(L.isDisponible()==false){
+	            		for (int j = 0; j < ListaSocios.size(); j++) {
+							socio S = ListaSocios.get(j);
+							if (S.getCarnet()==carnetSocio) {
+								if(S.buscarLibro(codigoLibro)) {
+									S.quitarLibro(codigoLibro);
+									L.setDisponible(true);
+								for (int k = 0; k < ListaPrestamos.size(); k++) {
+									Prestamo p = ListaPrestamos.get(k);
+									if(p.buscarPrestamo(codigoLibro)) {
+										LocalDateTime fecha = LocalDateTime.now();
+										p.setFechaDevolucion(fecha);
+									
+									}
+								}
+								}
+							}
+	            			
+                   
+                
+            }
+        }
+	            }
+       
+    
+	}
 }
+}
+	
+
