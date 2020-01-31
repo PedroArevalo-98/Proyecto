@@ -6,7 +6,9 @@ public class socio {
 	
 	private String nombre;
 	private String carnet;
-	private ArrayList prestamo = new ArrayList();
+	private ArrayList<String> prestamo = new ArrayList();
+	
+
 	
 	
 	socio() {
@@ -34,11 +36,9 @@ public class socio {
 		this.carnet = carnet;
 	}
 
-	public ArrayList getPrestamo() {
-		return prestamo;
-	}
-
-	public void setPrestamo(ArrayList prestamo) {
-		this.prestamo = prestamo;
-	}
+	
+	 public void addLibro(String codigoLibro){
+	        prestamo.add(codigoLibro);
+	    }
+	    
 }

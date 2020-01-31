@@ -1,5 +1,7 @@
 package proyecto;
 
+
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,6 +12,7 @@ public class biblioteca {
 	static Scanner En;
 	static ArrayList<libros> ListaLibros;
 	static ArrayList<socio> ListaSocios;
+	static ArrayList<Prestamo> Prestamos;
 	
 	
 	public static void main(String[] args) {
@@ -27,24 +30,31 @@ public class biblioteca {
 			libros L = ListaLibros.get(i);
 			
 			if (L.getTitulo().toLowerCase().equals(Titulo) ) {
-				if (L.getId()==null) {
+				if (L.isDisponible()==true) {
+					L.setDisponible(false);
 					L.setId(carnetSocio);
 					for (int j = 0; j < ListaSocios.size(); j++) {
 						socio S = ListaSocios.get(j);
 						if (S.getCarnet().toLowerCase().equals(carnetSocio)) {
 							System.out.println(" El libro "+L.getTitulo() +" está ahora siendo prestado al usuario "+S.getNombre()+" cuyo codigo es "+S.getCarnet());
+							LocalDateTime fecha = LocalDateTime.now();
+							 Prestamo prestamo = new Prestamo(S.getCarnet(),L.getId(),fecha);
+							 S.addLibro(L.getId());
 						}
 					}
-				}else if (L.getId()!=null) {
+				}else if (L.isDisponible()==false) {
 					for (int j = 0; j < ListaSocios.size(); j++) {
 						socio S = ListaSocios.get(j);
 						if (S.getCarnet().toLowerCase().equals(L.getId())) {
-							System.out.println(" El libro "+L.getTitulo() +" ya está siendo prestado al usuario "+S.getNombre()+" cuyo codigo es "+S.getCarnet());
+							System.out.println(" El libro "+L.getTitulo() +" ya está siendo prestado al usuario "+S.getNombre()+" cuyo codigo es " +S.getCarnet());
 						}
 				}
 				
-			}else if()
+			}else if(L.getTitulo()==null) {
+				System.out.println("El libro no existe en la biblioteca");
+			}
 	}
 }
 }
+	
 }
