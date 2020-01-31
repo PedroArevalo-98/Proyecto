@@ -8,6 +8,7 @@ public class socio {
 	private String carnet;
 	private ArrayList prestamo = new ArrayList();
 	
+	
 	socio() {
 	}
 	
