@@ -16,6 +16,7 @@ public class libros {
 	}
 
 	libros() {
+		
 	}
 	
 	libros(String titulo, String autor, String id,boolean disponible) {
