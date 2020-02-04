@@ -6,18 +6,26 @@ public class socio {
 	
 	private String nombre;
 	private String carnet;
-	private ArrayList<String> prestamo = new ArrayList();
+	private ArrayList<String> prestamo;
 	
 
 	
 	
+	public ArrayList<String> getPrestamo() {
+		return prestamo;
+	}
+
+	public void setPrestamo(ArrayList<String> prestamo) {
+		this.prestamo = prestamo;
+	}
+
 	socio() {
 	}
 	
-	socio(String nombre, String carnet, ArrayList prestamo) {
+	socio(String nombre, String carnet) {
 		this.nombre = nombre;
 		this.carnet = carnet;
-		this.prestamo = prestamo;
+		this.prestamo=new ArrayList<>();
 	}
 
 	public String getNombre() {
