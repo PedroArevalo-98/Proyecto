@@ -19,7 +19,7 @@ public class libros {
 		
 	}
 	
-	libros(String titulo, String autor, String id,boolean disponible) {
+	public libros(String titulo, String autor, String id,boolean disponible) {
 		this.autor = autor;
 		this.titulo = titulo;
 		this.id = id;

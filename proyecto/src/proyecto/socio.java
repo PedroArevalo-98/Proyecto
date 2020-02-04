@@ -22,7 +22,7 @@ public class socio {
 	socio() {
 	}
 	
-	socio(String nombre, String carnet) {
+	public socio(String nombre, String carnet) {
 		this.nombre = nombre;
 		this.carnet = carnet;
 		this.prestamo=new ArrayList<>();
