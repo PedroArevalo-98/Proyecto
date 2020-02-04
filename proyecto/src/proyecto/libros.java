@@ -4,15 +4,26 @@ public class libros {
 	
 	private String autor;
 	private String titulo;
-	private String id;
+	private String id= null;
+	private boolean disponible=true;
 	
+	public boolean isDisponible() {
+		return disponible;
+	}
+
+	public void setDisponible(boolean disponible) {
+		this.disponible = disponible;
+	}
+
 	libros() {
+		
 	}
 	
-	libros(String autor, String titulo, String id) {
+	public libros(String titulo, String autor, String id,boolean disponible) {
 		this.autor = autor;
 		this.titulo = titulo;
 		this.id = id;
+		this.disponible=disponible;
 	}
 
 	public String getAutor() {
@@ -40,5 +51,4 @@ public class libros {
 	}
 	
 	
-
 }

@@ -6,15 +6,26 @@ public class socio {
 	
 	private String nombre;
 	private String carnet;
-	private ArrayList prestamo = new ArrayList();
+	private ArrayList<String> prestamo;
 	
+
+	
+	
+	public ArrayList<String> getPrestamo() {
+		return prestamo;
+	}
+
+	public void setPrestamo(ArrayList<String> prestamo) {
+		this.prestamo = prestamo;
+	}
+
 	socio() {
 	}
 	
-	socio(String nombre, String carnet, ArrayList prestamo) {
+	public socio(String nombre, String carnet) {
 		this.nombre = nombre;
 		this.carnet = carnet;
-		this.prestamo = prestamo;
+		this.prestamo=new ArrayList<>();
 	}
 
 	public String getNombre() {
@@ -33,11 +44,26 @@ public class socio {
 		this.carnet = carnet;
 	}
 
-	public ArrayList getPrestamo() {
-		return prestamo;
-	}
-
-	public void setPrestamo(ArrayList prestamo) {
-		this.prestamo = prestamo;
-	}
+	
+	 public void addLibro(String codigoLibro){
+	        prestamo.add(codigoLibro);
+	    }
+	 public boolean buscarLibro (String codigoLibro) {
+		 for (int i = 0; i < prestamo.size(); i++) {
+			String codigo =prestamo.get(i);
+			if (codigo==codigoLibro) {
+				return true;
+			}
+		}
+		return false;
+	 }
+	 public void quitarLibro (String codigoLibro) {
+		 for (int i = 0; i < prestamo.size(); i++) {
+			String codigo =prestamo.get(i);
+			if (codigo==codigoLibro) {
+				prestamo.remove(i);
+			}
+		}
+		
+	 }
 }
