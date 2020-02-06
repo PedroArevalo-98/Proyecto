@@ -65,6 +65,10 @@ public class Utilidades {
 				}
 			}
 			}
+	
+	/**
+	*Metodo para devolver un libro, en donde se pide el carnet de socio y el titulo que se quiere devolver
+	*/
 				public static void devolverLibro(String carnetSocio, String Titulo) {
 					
 					 for(int i=0; i<ListaLibros.size(); i++){
