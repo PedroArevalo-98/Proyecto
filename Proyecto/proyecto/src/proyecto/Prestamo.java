@@ -10,14 +10,14 @@ public class Prestamo {
     private double idUsuario; 
     private double codigoLibro;
     
-    private ArrayList<String> codigosLibrosPrestados; 
+    
     
     public Prestamo(double d, double codigoLibro, LocalDateTime fecha){
         this.idUsuario = d;
         this.fechaSalida=fecha;
         this.codigoLibro=codigoLibro;
-        this.fechaDevolucion = fecha.plus(30, ChronoUnit.DAYS);
-        this.codigosLibrosPrestados = new ArrayList();
+        this.fechaDevolucion = null;
+       
     }
 
     public LocalDateTime getFechaSalida() {
@@ -45,9 +45,7 @@ public class Prestamo {
     }
 
     
-    public void addLibro(String codigoLibro){
-        codigosLibrosPrestados.add(codigoLibro);
-    }
+   
     
     public void devolverLibro(){
     }
@@ -71,16 +69,20 @@ public class Prestamo {
 		this.idUsuario = idUsuario;
 	}
 
-	public ArrayList<String> getCodigosLibrosPrestados() {
-		return codigosLibrosPrestados;
-	}
+	
 
-	public void setCodigosLibrosPrestados(ArrayList<String> codigosLibrosPrestados) {
-		this.codigosLibrosPrestados = codigosLibrosPrestados;
-	}
+	
 	public void mostrarPrestamo() {
 		System.out.println(" fecha de prestamo "+fechaSalida +" fecha de devolucion " +fechaDevolucion +" carnet de socio poseedor del libro " +idUsuario +" codigo del libro "+codigoLibro);
 	}
+
+	@Override
+	public String toString() {
+		return "Prestamo [fechaSalida=" + fechaSalida + ", fechaDevolucion=" + fechaDevolucion + ", idUsuario="
+				+ idUsuario + ", codigoLibro=" + codigoLibro
+				+ "]";
+	}
+	
     
 }
 

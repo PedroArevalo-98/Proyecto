@@ -49,6 +49,11 @@ public class libros {
 	public void setId(double id) {
 		this.id = id;
 	}
+
+	@Override
+	public String toString() {
+		return "libros [autor=" + autor + ", titulo=" + titulo + ", id=" + id + ", disponible=" + disponible + "]";
+	}
 	
 	
 }

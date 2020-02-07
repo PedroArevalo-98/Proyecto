@@ -1,6 +1,9 @@
 package proyecto;
 
 import java.util.ArrayList;
+import java.util.List;
+
+
 
 public class socio {
 	
@@ -73,4 +76,13 @@ public class socio {
 		            elemento -> System.out.print(String.format("%.1f  ", elemento)));
 		 			System.out.println(" ");
 	 }
+	 
+		
+
+	@Override
+	public String toString() {
+		return "socio [nombre=" + nombre + ", carnet=" + carnet + ", prestamo=" + prestamo + "]";
+	}
+	 
 }
+

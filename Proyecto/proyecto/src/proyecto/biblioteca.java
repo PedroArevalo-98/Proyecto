@@ -45,19 +45,13 @@ public class biblioteca {
 				Utilidades.aniadirLibro();
 				break;
 			case 3:
-				System.out.println("Introduzca su carnet de socio");
-				double pedir=Excepcion.controlaDouble();
-				System.out.println("Introduzca el titulo del libro que desea pedir");
-				String pedir2=En.nextLine();
-				Utilidades.atenderPeticion(pedir, pedir2);
+			
+				Utilidades.atenderPeticion();
 				break;
 			case 4:
-				System.out.println("Introduzca su carnet de socio");
-				double pedir3=Excepcion.controlaDouble();
-				System.out.println("Introduzca el titulo del libro que va a devolver");
-				String pedir4=En.nextLine();
 				
-				Utilidades.devolverLibro(pedir3, pedir4);
+				
+				Utilidades.devolverLibro();
 				break;
 				
 			case 5: 
