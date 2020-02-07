@@ -4,12 +4,23 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
+/**
+ * Definimos la clase Prestamo para poder crearlos  
+ * @author almudenaflores
+ * @version 6/02/2020
+ */
 public class Prestamo {
+	/**
+	 * Definimos las variables
+	 */
 	private LocalDateTime fechaSalida;
     private LocalDateTime fechaDevolucion;
     private double idUsuario; 
     private double codigoLibro;
     
+     /**
+     * Creamos el constructor de Prestamos
+     */
     
     
     public Prestamo(double d, double codigoLibro, LocalDateTime fecha){
@@ -19,6 +30,10 @@ public class Prestamo {
         this.fechaDevolucion = null;
        
     }
+	  /**
+     * Getters y setters 
+     * @return devuelve el atributo
+     */
 
     public LocalDateTime getFechaSalida() {
         return fechaSalida;
@@ -46,12 +61,11 @@ public class Prestamo {
 
     
    
-    
-    public void devolverLibro(){
-    }
-    
-    public void multa(){
-    }
+     /**
+     * Método para buscar un prestamo
+     * @param codigo
+     * @return falso si esta prestado y true si esta disponible 
+     */
     public boolean buscarPrestamo (double codigoLibro2) {
 		
 			if (codigoLibro==codigoLibro2) {
