@@ -7,9 +7,17 @@ import proyecto.Prestamo;
 import proyecto.libros;
 import proyecto.socio;
 
+/**
+ * Definimos la Utilidades en donde se encuentran los metodos del menu 
+ * @author almudenaflores
+ * @version 6/02/2020
+ */
+
 public class Utilidades {
 	
-	//referencias esteticas para no tener que crearlas en cada mï¿½todo
+	/**
+	*referencias esteticas para no tener que crearlas en cada metodo
+	*/
 			static Scanner En = new Scanner (System.in);
 			public ArrayList<libros> ListaLibros = new ArrayList<>();
 			public ArrayList<socio> ListaSocios = new ArrayList <>();
@@ -80,6 +88,9 @@ public class Utilidades {
 						}
 				
 				
+	/**
+	*Metodo para devolver un libro. se pide el carnet del socio y su titulo. Notifica si el libro no esta en la lista de prestamos del socio o si no se encuentra el libro/socio
+	*/
 				public void devolverLibro(double carnetSocio, String Titulo) {
 					boolean bandera=false;
 					boolean bandera2=false;
@@ -131,7 +142,7 @@ public class Utilidades {
 					}
 				}
 				/*
-				 * MÃ©todo para recoger los datos de un socio nuevo
+				 * Metodo para recoger los datos de un socio nuevo
 				 */
 				public void aniadirSocio() {
 					System.out.println("--CREAR NUEVO SOCIO--");
@@ -151,9 +162,12 @@ public class Utilidades {
 					
 				}
 				
+	/**
+	*Metodo para anadir un libro nuevo a la biblioteca. Pide el titulo, autor y se le asigna un ID aleatorio
+	*/
 				public void aniadirLibro() {
 					System.out.println("--CREAR NUEVO LIBRO--");
-					System.out.println("Introduzca el tÃ­tulo");
+					System.out.println("Introduzca el titulo");
 					String titulo=En.nextLine();
 					En.nextLine();
 					System.out.println("Introduzca el autor");
@@ -175,6 +189,9 @@ public class Utilidades {
 					
 				}
 				
+	/**
+	*Metodo para borrar un socio. hay que introducir el numero de carnet del socio, y posteriormente se asegura si lo quieres borrar. si no hay usuario, notifica del error
+	*/
 				public void borrarSocio() {
 					
 					for (int i = 0; i < ListaSocios.size(); i++) {
@@ -230,6 +247,9 @@ public class Utilidades {
 				}
 				
 				
+	/**
+	*Menu de la biblioteca
+	*/
 				public void menu() {
 					System.out.println("--BIBLIOTECA--");
 					System.out.println("===================");
@@ -245,6 +265,9 @@ public class Utilidades {
 					System.out.print("Introduzca una opcion: ");
 
 				}
+	/**
+	*Metodo para listar los socios. Notifica si no hay ninguno
+	*/
 				
 				public void listarSocios() {
 					if (ListaSocios.isEmpty()) {
@@ -259,6 +282,9 @@ public class Utilidades {
 					}
 				}
 				
+	/**
+	*Metodo para listar los libros disponibles. Notifica si no hay ninguno
+	*/
 				public void listarLibros() {
 					if (ListaLibros.isEmpty()) {
 						System.out.println("La biblioteca no tiene libros");
@@ -271,6 +297,9 @@ public class Utilidades {
 						System.out.println("");
 					}
 				}
+	/**
+	*Metodo para buscar libros disponibles por su codigo
+	*/
 				public libros buscarLibroByCodigo(String titulo){
 			        libros libro;
 			        for(int i=0; i<ListaLibros.size(); i++){
@@ -281,6 +310,10 @@ public class Utilidades {
 			        }
 			        return null;
 			    }
+	
+	/**
+	*Metodo para mostrar los prestamos hechos
+	*/
 				public void mostrarPrestamos() {
 					
 					
