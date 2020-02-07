@@ -11,10 +11,16 @@ import proyecto.Prestamo;
 import proyecto.libros;
 import proyecto.socio;
 import java.util.*;
-
+/**
+ * Definimos la clase socio para poder crearlos  
+ * @author almudenaflores
+ * @version 6/02/2020
+ */
 public class Utilidades {
 	
-	//referencias esteticas para no tener que crearlas en cada mï¿½todo
+/**
+	 * referencias esteticas para no tener que crearlas en cada metodo
+	 */
 			static Scanner En = new Scanner (System.in);
 			public ArrayList<libros> ListaLibros = new ArrayList<>();
 			public ArrayList<socio> ListaSocios = new ArrayList <>();
@@ -24,9 +30,14 @@ public class Utilidades {
 			
 			
 		
-		//atender peticion, la variable que da acceso al usuario sobre el libro puede ser el id de usuario, si este es null significa que el libro
-				//no esta prestado / tambien puede ser un valor el cual toma un numero determinado cuando el libro es prestado
-				
+		/**
+		 * atender peticion, la variable que da acceso al usuario sobre el libro puede ser el id de usuario, 
+		 * si este es null significa que el libro.
+		 * 
+		 * no esta prestado / tambien puede ser un valor el cual toma un numero determinado cuando el libro es prestado
+		 * @param carnetSocio
+		 * @param Titulo
+		 */
 			public void atenderPeticion() throws IOException {
 				boolean pedir=true;
 				//double  carnetSocio=10;
@@ -65,7 +76,7 @@ public class Utilidades {
 						
 					
 					}else  {
-						System.out.println("El libro ya está prestado");
+						System.out.println("El libro ya estÃ¡ prestado");
 					}
 				}
 				
@@ -107,7 +118,7 @@ public class Utilidades {
 										
 										bandera2=true;
 										L.setDisponible(false);
-										System.out.println(" El libro "+L.getTitulo() +" está ahora siendo prestado al usuario "+S.getNombre()+" cuyo codigo es "+S.getCarnet());
+										System.out.println(" El libro "+L.getTitulo() +" estÃ¡ ahora siendo prestado al usuario "+S.getNombre()+" cuyo codigo es "+S.getCarnet());
 										LocalDateTime fecha = LocalDateTime.now();
 										 ListaPrestamos.add(new Prestamo(S.getCarnet(),L.getId(),fecha));
 										 S.addLibro(L.getId());
@@ -123,7 +134,7 @@ public class Utilidades {
 								for (int j = 0; j < ListaSocios.size(); j++) {
 									socio S = ListaSocios.get(j);
 									if (S.buscarLibro((L.getId()))) {
-										System.out.println(" El libro "+L.getTitulo() +" ya está siendo prestado al usuario "+S.getNombre()+" cuyo codigo es " +S.getCarnet());
+										System.out.println(" El libro "+L.getTitulo() +" ya estÃ¡ siendo prestado al usuario "+S.getNombre()+" cuyo codigo es " +S.getCarnet());
 									}
 							}
 							
@@ -141,7 +152,9 @@ public class Utilidades {
 					}
 						}*/
 				
-				
+				/**
+	*Metodo para devolver un libro, en donde se pide el carnet de socio y el titulo que se quiere devolver
+	*/
 			
 				public void devolverLibro() throws IOException {
 					double carnetSoci;
@@ -230,11 +243,11 @@ public class Utilidades {
 										}
 				            		}
 				            	}else {
-				            		System.out.println("El libro ya está disponible");
+				            		System.out.println("El libro ya estÃ¡ disponible");
 				            		break;
 				            	}
 				            }else {
-				            	System.out.println("Libro no está en la biblioteca");
+				            	System.out.println("Libro no estÃ¡ en la biblioteca");
 				            }
 					 }if (bandera==false) {
 						 System.out.println("Socio no encontrado");
@@ -243,7 +256,7 @@ public class Utilidades {
 					}
 				}
 				/*
-				 * MÃ©todo para recoger los datos de un socio nuevo
+				 * Metodo para recoger los datos de un socio nuevo
 				 */
 				public void aniadirSocio() {
 					System.out.println("--CREAR NUEVO SOCIO--");
@@ -270,11 +283,13 @@ public class Utilidades {
 					}
 					
 					
-				
+/**
+				 * Metodo para anadir un libro nuevo
+				 */
 				
 				public void aniadirLibro() {
 					System.out.println("--CREAR NUEVO LIBRO--");
-					System.out.println("Introduzca el tÃ­tulo");
+					System.out.println("Introduzca el tÃƒÂ­tulo");
 					String titulo=En.nextLine();
 					En.nextLine();
 					System.out.println("Introduzca el autor");
@@ -304,7 +319,9 @@ public class Utilidades {
 
 						}
 					
-					
+					/**
+				 * Metodo para borrar un socio existente
+				 */
 					
 				public void borrarSocio() throws IOException {
 					boolean pedir;
@@ -373,7 +390,7 @@ public class Utilidades {
 						System.out.println(borrar);
 						System.out.println(s.getCarnet());
 						if(s.getCarnet()==(borrar)) {
-							System.out.println("ESTAS A PUNTO DE BORRAR EL USUARIO: "+s.getNombre()+" ¿ESTAS SEGURO? (Si/No)");
+							System.out.println("ESTAS A PUNTO DE BORRAR EL USUARIO: "+s.getNombre()+" Â¿ESTAS SEGURO? (Si/No)");
 							String sino=En.next();
 							
 							String comprobar ="Si";
@@ -425,12 +442,14 @@ public class Utilidades {
 				}
 				*/
 				
-				
+/**
+				 * Menu de la biblioteca
+				 */
 				public void menu() {
 					System.out.println("--BIBLIOTECA--");
 					System.out.println("===================");
-					System.out.println("1. Añadir socio");
-					System.out.println("2. Añadir libro");
+					System.out.println("1. AÃ±adir socio");
+					System.out.println("2. AÃ±adir libro");
 					System.out.println("3. Solicitar libro");
 					System.out.println("4. Devolver libro");
 					System.out.println("5. Eliminar socio");
@@ -442,6 +461,9 @@ public class Utilidades {
 
 				}
 				
+	/**
+				 * Metodo para listar los socios que estan creados hasta ese momento
+				 */
 				public void listarSocios() {
 					if (ListaSocios.isEmpty()) {
 						System.out.println("La biblioteca no tiene usuarios");
@@ -456,7 +478,9 @@ public class Utilidades {
 					
 					}
 				
-				
+				/**
+				 * Metodo para listar los socios que estan creados hasta ese momento
+				 */
 				public void listarLibros() {
 					if (ListaLibros.isEmpty()) {
 						System.out.println("La biblioteca no tiene libros");
