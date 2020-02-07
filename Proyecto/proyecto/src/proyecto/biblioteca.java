@@ -7,6 +7,11 @@ import java.util.Scanner;
 import utilidades.Utilidades;
 import utilidades.*;
 
+/**
+ * Definimos la biblioteca en donde ya hay creados unos cuantos libros  
+ * @author almudenaflores
+ * @version 6/02/2020
+ */
 public class biblioteca {
 	
 	
@@ -16,7 +21,9 @@ public class biblioteca {
 		Scanner En = new Scanner(System.in);
 		Excepciones Excepcion = new Excepciones();
 		Utilidades Utilidades = new Utilidades();
-		
+		/**
+		 * libros ya disponibles en la biblioteca
+		 */
 		Utilidades.ListaLibros.add(new libros("El Quijote", "Cervantes", 1, true));
 		Utilidades.ListaLibros.add(new libros("Harry Potter", "J.k.Rowling", 2, true));
 		Utilidades.ListaLibros.add(new libros("Perci Jackson", "Rick Riordan", 3, true));
@@ -32,6 +39,9 @@ public class biblioteca {
 		Utilidades.ListaSocios.add(new socio("Marta",13));
 		Utilidades.ListaSocios.add(new socio("Antonio",14));
 		
+		/**
+		 * Menu de la biblioteca
+		 */
 		
 		do {
 			// Al inicio de cada iteracionn mostramos el menu, y recogemos la opcion
