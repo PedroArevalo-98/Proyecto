@@ -7,6 +7,12 @@ import java.util.Scanner;
 import utilidades.Utilidades;
 import utilidades.*;
 
+/**
+ * Definimos la clase biblioteca donde esta el main  
+ * @author almudenaflores
+ * @version 6/02/2020
+ */
+
 public class biblioteca {
 	
 	
@@ -34,7 +40,9 @@ public class biblioteca {
 		
 		
 		do {
-			// Al inicio de cada iteracionn mostramos el menu, y recogemos la opcion
+			/** 
+			*Al inicio de cada iteracionn mostramos el menu, y recogemos la opcion
+			*/
 			Utilidades.menu();
 			opcion = Excepcion.controlaInt();
 			switch (opcion) {
