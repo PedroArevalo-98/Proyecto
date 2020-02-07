@@ -1,6 +1,14 @@
 package proyecto;
 
+/**
+ * Definimos la clase libros   
+ * @author almudenaflores
+ * @version 6/02/2020
+ */
 public class libros {
+	/**
+	 * Definimos las variables
+	 */
 	
 	private String autor;
 	private String titulo;
@@ -14,10 +22,19 @@ public class libros {
 	public void setDisponible(boolean disponible) {
 		this.disponible = disponible;
 	}
-
+/**
+	 * constructor por defecto
+	 */
 	libros() {
 		
 	}
+	/**
+	 * constructor con las variables
+	 * @param titulo
+	 * @param autor
+	 * @param id
+	 * @param disponible
+	 */
 	
 	public libros(String titulo, String autor, double id,boolean disponible) {
 		this.autor = autor;
@@ -25,6 +42,10 @@ public class libros {
 		this.id = id;
 		this.disponible=disponible;
 	}
+	/**
+	 * getters y setters
+	 * @return devuelve el atributo
+	 */
 
 	public String getAutor() {
 		return autor;
