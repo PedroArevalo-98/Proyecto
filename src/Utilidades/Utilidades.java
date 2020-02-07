@@ -9,7 +9,7 @@ import proyecto.socio;
 
 public class Utilidades {
 	
-	//referencias esteticas para no tener que crearlas en cada m�todo
+	//referencias esteticas para no tener que crearlas en cada mï¿½todo
 			static Scanner En = new Scanner (System.in);
 			public ArrayList<libros> ListaLibros = new ArrayList<>();
 			public ArrayList<socio> ListaSocios = new ArrayList <>();
@@ -45,7 +45,7 @@ public class Utilidades {
 										
 										bandera2=true;
 										L.setDisponible(false);
-										System.out.println(" El libro "+L.getTitulo() +" est� ahora siendo prestado al usuario "+S.getNombre()+" cuyo codigo es "+S.getCarnet());
+										System.out.println(" El libro "+L.getTitulo() +" está ahora siendo prestado al usuario "+S.getNombre()+" cuyo codigo es "+S.getCarnet());
 										LocalDateTime fecha = LocalDateTime.now();
 										 ListaPrestamos.add(new Prestamo(S.getCarnet(),L.getId(),fecha));
 										 S.addLibro(L.getId());
@@ -61,7 +61,7 @@ public class Utilidades {
 								for (int j = 0; j < ListaSocios.size(); j++) {
 									socio S = ListaSocios.get(j);
 									if (S.buscarLibro((L.getId()))) {
-										System.out.println(" El libro "+L.getTitulo() +" ya est� siendo prestado al usuario "+S.getNombre()+" cuyo codigo es " +S.getCarnet());
+										System.out.println(" El libro "+L.getTitulo() +" ya está siendo prestado al usuario "+S.getNombre()+" cuyo codigo es " +S.getCarnet());
 									}
 							}
 							
@@ -118,11 +118,11 @@ public class Utilidades {
 										}
 				            		}
 				            	}else {
-				            		System.out.println("El libro ya est� disponible");
+				            		System.out.println("El libro ya está disponible");
 				            		break;
 				            	}
 				            }else {
-				            	System.out.println("Libro no est� en la biblioteca");
+				            	System.out.println("Libro no está en la biblioteca");
 				            }
 					 }if (bandera==false) {
 						 System.out.println("Socio no encontrado");
@@ -131,7 +131,7 @@ public class Utilidades {
 					}
 				}
 				/*
-				 * Método para recoger los datos de un socio nuevo
+				 * MÃ©todo para recoger los datos de un socio nuevo
 				 */
 				public void aniadirSocio() {
 					System.out.println("--CREAR NUEVO SOCIO--");
@@ -153,7 +153,7 @@ public class Utilidades {
 				
 				public void aniadirLibro() {
 					System.out.println("--CREAR NUEVO LIBRO--");
-					System.out.println("Introduzca el título");
+					System.out.println("Introduzca el tÃ­tulo");
 					String titulo=En.nextLine();
 					En.nextLine();
 					System.out.println("Introduzca el autor");
@@ -183,7 +183,7 @@ public class Utilidades {
 						socio s=ListaSocios.get(i);
 						
 						if(s.getCarnet()==(borrar)) {
-							System.out.println("ESTAS A PUNTO DE BORRAR EL USUARIO: "+s.getNombre()+" �ESTAS SEGURO? (Si/No)");
+							System.out.println("ESTAS A PUNTO DE BORRAR EL USUARIO: "+s.getNombre()+" ¿ESTAS SEGURO? (Si/No)");
 							String sino=En.next();
 							String comprobar ="Si";
 							if(sino.equals(comprobar)) {
@@ -233,8 +233,8 @@ public class Utilidades {
 				public void menu() {
 					System.out.println("--BIBLIOTECA--");
 					System.out.println("===================");
-					System.out.println("1. A�adir socio");
-					System.out.println("2. A�adir libro");
+					System.out.println("1. Añadir socio");
+					System.out.println("2. Añadir libro");
 					System.out.println("3. Solicitar libro");
 					System.out.println("4. Devolver libro");
 					System.out.println("5. Eliminar socio");
