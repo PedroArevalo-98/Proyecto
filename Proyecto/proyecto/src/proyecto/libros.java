@@ -1,7 +1,8 @@
 package proyecto;
+
 /**
  * Definimos la clase libros para poder crearlos  
- * @author almudenaflores
+ * @author almudenaflores, Pedro Arevalo, Jose Manuel
  * @version 6/02/2020
  */
 public class libros {

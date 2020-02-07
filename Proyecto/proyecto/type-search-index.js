@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"proyecto","l":"biblioteca"},{"p":"utilidades","l":"Excepciones"},{"p":"proyecto","l":"libros"},{"p":"proyecto","l":"Prestamo"},{"p":"proyecto","l":"socio"},{"p":"utilidades","l":"Utilidades"}]

@@ -3,9 +3,11 @@ package proyecto;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 /**
  * Definimos la clase socio para poder crearlos  
- * @author almudenaflores
+ * @author almudenaflores,Pedro Arevalo, Jose Manuel
  * @version 6/02/2020
  */
 
@@ -70,7 +72,7 @@ public class socio {
 	 */
 	 public void addLibro(Double codigoLibro){
 	        prestamo.add(codigoLibro);
-	    
+	 }
 			 /**
 	  * Metodo para buscar un libro
 	  * @param codigoLibro
@@ -114,4 +116,3 @@ public class socio {
 	}
 	 
 }
-
