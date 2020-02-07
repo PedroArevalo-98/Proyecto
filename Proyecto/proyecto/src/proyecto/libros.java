@@ -1,7 +1,13 @@
 package proyecto;
-
+/**
+ * Definimos la clase libros para poder crearlos  
+ * @author almudenaflores
+ * @version 6/02/2020
+ */
 public class libros {
-	
+	/**
+	 * Creamos las variables de los libros
+	 */
 	private String autor;
 	private String titulo;
 	private double id= 0;
@@ -14,11 +20,19 @@ public class libros {
 	public void setDisponible(boolean disponible) {
 		this.disponible = disponible;
 	}
-
+/**
+	 * Creamos constructor por defecto
+	 */
 	libros() {
 		
 	}
-	
+	/**
+	 * Creamos el constructor con las variables
+	 * @param titulo 
+	 * @param autor
+	 * @param id
+	 * @param disponible
+	 */
 	public libros(String titulo, String autor, double id,boolean disponible) {
 		this.autor = autor;
 		this.titulo = titulo;
