@@ -17,7 +17,7 @@ public class Excepciones {
 	error = false;
 	} catch (NumberFormatException e) {
 	// TODO: handle exception
-	System.out.println("Valor no v·lido, introduzcalo de nuevo");
+	System.out.println("Valor no v√°lido, introduzcalo de nuevo");
 	error = true;
 	}
 	} while (error);
@@ -35,7 +35,7 @@ public class Excepciones {
 	error = false;
 	} catch (NumberFormatException e) {
 	// TODO: handle exception
-	System.out.println("Valor no v·lido, vuelva a introducirlo");
+	System.out.println("Valor no v√°lido, vuelva a introducirlo");
 	error = true;
 	}
 	} while (error);
