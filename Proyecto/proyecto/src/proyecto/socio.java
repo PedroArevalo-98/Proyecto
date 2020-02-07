@@ -1,9 +1,15 @@
 package proyecto;
 
 import java.util.ArrayList;
-
+/**
+ * Definimos la clase socio  
+ * @author almudenaflores
+ * @version 6/02/2020
+ */
 public class socio {
-	
+	/**
+	 * Definimos las variables
+	 */
 	private String nombre;
 	private int carnet;
 	private ArrayList<Double> prestamo;
@@ -28,6 +34,10 @@ public class socio {
 		this.prestamo=new ArrayList<>();
 	}
 
+	/**
+	 * Getters y setters
+	 * @return devuelve el atributo
+	 */
 	public String getNombre() {
 		return nombre;
 	}
@@ -57,6 +67,9 @@ public class socio {
 		}
 		return false;
 	 }
+	/**
+	  * Metodo para quitar libro existente de ese usuario
+	  */
 	 public void quitarLibro (double codigoLibro) {
 		 for (int i = 0; i < prestamo.size(); i++) {
 			double codigo =prestamo.get(i);
@@ -66,6 +79,9 @@ public class socio {
 		}
 		
 	 }
+	/**
+	  * Metodo para mostrar los socios y los libros que tiene en su poder
+	  */
 	 public void mostrarelementos() {
 		 System.out.println(" Usuario: "+nombre +","+ "Id de usuario: "+carnet);
 		System.out.println("ids de libros en su poder");
